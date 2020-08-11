@@ -14,7 +14,8 @@
           :data="tableData"
           tooltip-effect="dark"
           style="width: 100%"
-          @selection-change="handleSelectionChange">
+          :header-cell-style="rowClass"
+          @row-click="rowClick">
           <!-- <el-table-column
             type="selection"
             width="55">
@@ -49,8 +50,8 @@
             width="145"
             align="center">
             <template>
-              <el-button size="mini">编辑</el-button>
-              <el-button size="mini">删除</el-button>
+              <el-button size="mini" type="warning">编辑</el-button>
+              <el-button size="mini" type="danger">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -58,11 +59,11 @@
           align="center"
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
-          :current-page="currentPage4"
+          :current-page="currentPage"
           :page-sizes="[10, 20, 30, 50]"
-          :page-size="100"
+          :page-size="pageSize"
           layout="total, prev, pager, next, sizes"
-          :total="400">
+          :total="total">
         </el-pagination>
       </el-card>
     </div>
@@ -174,6 +175,12 @@
   .el-pagination {
 
     margin-top: 20px;
+
+  }
+
+  .el-table {
+
+    cursor: pointer;
 
   }
 

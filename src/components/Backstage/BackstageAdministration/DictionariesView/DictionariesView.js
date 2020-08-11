@@ -9,8 +9,10 @@ export default {
     return {
       tableData: [],
       tableDataS: [],
-      multipleSelection: [],
-      currentPage4: 4
+      currentPage: 1,
+      pageNow: 0,
+      pageSize: 10,
+      total: 0,
     }
   },
   mounted () {
@@ -19,9 +21,9 @@ export default {
   methods: {
     async getDicts () {
       const { code, data } = await this.$http.post('/sys/dictType/listByCondition', {
-        currentPage: 1,
-        pageNo: 0,
-        pageSize: 10
+        currentPage: this.currentPage,
+        pageNo: this.pageNow,
+        pageSize: this.pageSize
       })
       if (code !== 200) {
         return this.$notify({
@@ -30,24 +32,22 @@ export default {
         })
       }
       this.tableData = data.rows
-    },
-    toggleSelection (rows) {
-      if (rows) {
-        rows.forEach(row => {
-          this.$refs.multipleTable.toggleRowSelection(row)
-        })
-      } else {
-        this.$refs.multipleTable.clearSelection()
-      }
-    },
-    handleSelectionChange (val) {
-      this.multipleSelection = val
+      this.total = data.total
     },
     handleSizeChange (val) {
-      console.log(`每页 ${val} 条`)
+      this.pageSize = val
+      this.getDicts()
     },
     handleCurrentChange (val) {
-      console.log(`当前页: ${val}`)
+      this.pageNow = ( val - 1 ) * this.pageSize
+      this.currentPage = val
+      this.getDicts()
+    },
+    rowClass ({ row, rowIndex}) {
+      // return 'background: #008080; color: #000' 
+    },
+    rowClick(row, event, column) {
+      console.log(row, event, column)
     }
   }
 }

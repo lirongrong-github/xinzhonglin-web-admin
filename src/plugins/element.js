@@ -33,6 +33,8 @@ import {
   Notification
 } from 'element-ui'
 
+import 'element-ui/lib/theme-chalk/index.css'
+
 import '@/base/css/element-variables.scss'
 
 // 设置 element 整体得size

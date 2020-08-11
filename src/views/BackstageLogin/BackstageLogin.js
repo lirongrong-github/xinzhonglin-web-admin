@@ -24,7 +24,6 @@ export default {
     getPassword () {
       const userCode = localStorage.getItem('username')
       const password = localStorage.getItem('password')
-      console.log(password)
       if (userCode) {
         this.loginForm = {
           userCode,
@@ -43,11 +42,14 @@ export default {
       })
     },
     async login () {
-      // this.$router.push('/backstage/home')
       const _loginForm = this._.cloneDeep(this.loginForm)
       const rememberPassword = this.rememberPassword
-      const password = _loginForm.password
-      _loginForm.password = this.$md5(_loginForm.password)
+      const password = localStorage.getItem('password')
+      if (!password) {
+        _loginForm.password = this.$md5(_loginForm.password)
+      } else if ( password !== _loginForm.password )  {
+        _loginForm.password = this.$md5(_loginForm.password)
+      }
       const { code, data, message } = await this.$http.post('sys/webLogin', _loginForm)
       if (code !== 200) {
         return this.$notify({
@@ -59,7 +61,7 @@ export default {
       // 判断是否勾选记住密码
       if (rememberPassword) {
         localStorage.setItem('username', _loginForm.userCode)
-        localStorage.setItem('password', password)
+        localStorage.setItem('password', _loginForm.password)
       } else {
         localStorage.removeItem('username')
         localStorage.removeItem('password')
