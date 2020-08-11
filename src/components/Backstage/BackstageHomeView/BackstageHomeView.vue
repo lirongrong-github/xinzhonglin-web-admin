@@ -1,10 +1,10 @@
 <template>
   <div class="backstage_homeview">
     <el-row :gutter="10">
-      <el-col :md="24" :lg="12">
+      <el-col :xs="24" :sm="12" :md="24" :lg="12" :xl="24">
         <div class="grid-content bg-purple">1</div>
       </el-col>
-      <el-col :md="24" :lg="12">
+      <el-col :xs="24" :sm="12" :md="24" :lg="12" :xl="24">
         <div class="grid-content bg-purple-light">4</div>
       </el-col>
     </el-row>
@@ -29,6 +29,7 @@
 
     width: 100%;
     height: 100%;
+    overflow: hidden;
     background-color: rgb(195, 112, 228);
 
   }

@@ -67,7 +67,7 @@
 
 <script src="./BackstageLogin.js"></script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 
   .backstage_loginView {
 

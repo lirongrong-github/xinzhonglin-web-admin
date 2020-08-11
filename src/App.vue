@@ -5,3 +5,13 @@
     </transition>
   </div>
 </template>
+
+<style lang="scss" scoped>
+  
+  #app {
+
+    font-size: 13px!important;
+
+  }
+
+</style>

@@ -101,7 +101,7 @@
 
   .closed {
 
-    width: 75px!important;
+    width: 80px!important;
 
   }
 
@@ -285,7 +285,7 @@
 
   .menu_style /deep/ i {
 
-    margin-right: 15px;
+    margin-right: 20px;
     font-size: 23px;
     color: #fff!important;
 
@@ -296,6 +296,11 @@
     margin-left: 10px!important;
     font-size: 18px;
     color: #fff!important;
+
+  }
+  .aside_buttom /deep/ .el-menu--collapse {
+
+    width: 80px!important;
 
   }
 
@@ -314,7 +319,7 @@
 
   .menu_style /deep/ .el-menu-item {
 
-    padding: 0 20px;
+    padding: 0 20px!important;
 
   } 
   .menu_style /deep/ .el-tooltip {
