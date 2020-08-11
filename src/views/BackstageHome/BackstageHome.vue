@@ -10,10 +10,10 @@
 
         <!-- topLogo -->
         <div class="aside_header clearfix">
-          <div class="img_style left">
+          <div class="img_style">
             <img src="../../assets/img/home_icon.png" alt="logo">
+            <div class="aside_text" v-show=" !isCollapse ">兴中林</div>
           </div>
-          <div class="aside_text left" v-show=" !isCollapse ">兴中林</div>
         </div>
 
         <!-- navMenuRouter -->
@@ -146,16 +146,16 @@
 
           .img_style {
 
-            margin: 0 20px;
-            margin-top: 25px;
-            margin-right: 40px;
-            width: 36px;
-            height: 41px;
+            width: 100%;
+            height: 10vh;
+            line-height: 10vh;
+            text-align: center;
 
             img {
 
-              width: 100%;
-              height: 100%;
+              width: 50px;
+              height: 50px;
+              vertical-align: middle;
 
             }
 
@@ -163,10 +163,13 @@
 
           .aside_text {
 
-            height: 10vh;
-            line-height: 84px;
+            display: inline-block;
+            /* height: 10vh; */
+            /* line-height: 0.4375rem; */
             font-size: 36px;
             color: #fff;
+            vertical-align: middle;
+            margin-left: 20px;
 
           }
 
@@ -282,7 +285,7 @@
 
   .menu_style /deep/ i {
 
-    margin-right: 10px;
+    margin-right: 15px;
     font-size: 23px;
     color: #fff!important;
 
@@ -306,6 +309,22 @@
     font-size: 12px;
     position: none;
     margin-left: 15px;
+
+  }
+
+  .menu_style /deep/ .el-menu-item {
+
+    padding: 0 20px;
+
+  } 
+  .menu_style /deep/ .el-tooltip {
+
+    padding: 0 20px!important;
+
+  } 
+  .menu_style /deep/ .el-submenu__title {
+
+    padding: 0 20px!important;
 
   }
 

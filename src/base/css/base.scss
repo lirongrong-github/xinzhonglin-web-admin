@@ -7,7 +7,7 @@
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background-color: rgba(185, 188, 192, 0.473);
+  background-color: rgba(159, 161, 163, 0.473);
 }
 
 /* 滚动条有滑块的轨道部分 */
@@ -19,7 +19,7 @@
 /* 滚动条滑块(竖向:vertical 横向:horizontal) */
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background-color:rgb(185, 188, 192);
+  background-color:rgba(107, 101, 101, 0.692);
   border-radius: 3px;
 }
 

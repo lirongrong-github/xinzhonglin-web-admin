@@ -9,7 +9,7 @@ import './plugins/element.js'
 import 'normalize.css/normalize.css'
 
 // base.css
-import '@/base/css/base.css'
+import '@/base/css/base.scss'
 
 // flexible
 import '@/base/utils/flexible.js'
