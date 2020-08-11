@@ -13,6 +13,7 @@ export default {
       pageNow: 0,
       pageSize: 10,
       total: 0,
+      loading: true
     }
   },
   mounted () {
@@ -20,6 +21,7 @@ export default {
   },
   methods: {
     async getDicts () {
+      this.loading = true
       const { code, data } = await this.$http.post('/sys/dictType/listByCondition', {
         currentPage: this.currentPage,
         pageNo: this.pageNow,
@@ -33,6 +35,7 @@ export default {
       }
       this.tableData = data.rows
       this.total = data.total
+      this.loading = false
     },
     handleSizeChange (val) {
       this.pageSize = val

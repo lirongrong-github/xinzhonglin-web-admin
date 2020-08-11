@@ -6,7 +6,7 @@
     <el-container class="main">
 
       <!-- leftContainer -->
-      <el-aside :width=" isCollapse ? '60px' : '200px' ">
+      <el-aside :class="{ collpase: !isCollapse, closed: isCollapse }">
 
         <!-- topLogo -->
         <div class="aside_header clearfix">
@@ -92,6 +92,18 @@
 <script src="./BackstageHome.js"></script>
 
 <style lang="scss" scoped>
+
+  .collpase {
+
+    width: 250px!important;
+
+  }
+
+  .closed {
+
+    width: 75px!important;
+
+  }
 
   .fade-own-enter-active, .fade-leave-active {
     transition: opacity .5s;
@@ -227,8 +239,8 @@
 
   .user_style {
 
-    height: 90px;
-    line-height: 120px;
+    height: 10vh;
+    line-height: 13vh;
     margin-right: 30px;
     color: #fff;
 
@@ -239,6 +251,13 @@
       cursor: pointer;
 
     }
+
+  }
+
+  .el-avatar {
+
+    width: 40px;
+    height: 40px;
 
   }
 

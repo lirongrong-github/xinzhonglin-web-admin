@@ -1,10 +1,12 @@
 <template>
   <div class="backstage_homeview">
     <el-row :gutter="10">
-      <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple">1</div></el-col>
-      <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light">2</div></el-col>
-      <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple">3</div></el-col>
-      <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light">4</div></el-col>
+      <el-col :md="24" :lg="12">
+        <div class="grid-content bg-purple">1</div>
+      </el-col>
+      <el-col :md="24" :lg="12">
+        <div class="grid-content bg-purple-light">4</div>
+      </el-col>
     </el-row>
   </div>
 </template>
